@@ -577,6 +577,21 @@ UE.plugins['table'] = function () {
             var range = this.selection.getRange(),
                 common = range.getCommonAncestor(true, true),
                 table = domUtils.findParentByTagName(common, 'table');
+            // tab键表格缩进 创立书签 然后获取后面的table 不支持第一行
+            var bk = range.createBookmark();
+            var indentTable = bk.start.nextSibling;
+            var tagName = indentTable.tagName && indentTable.tagName.toUpperCase();
+            if(tagName === 'TABLE'){
+                var parentOlNode = document.createElement('OL');
+                parentOlNode.className = 'custom_num list-paddingleft-1';
+                var parentLiNode = document.createElement('LI');
+                parentLiNode.className = 'list-num-1-1 list-num-paddingleft-1';
+                parentOlNode.appendChild(parentLiNode);
+                common.insertBefore(parentOlNode, indentTable);
+                parentLiNode.appendChild(indentTable);
+            }
+            range.moveToBookmark(bk).select(true);
+
             if (table) {
                 if (domUtils.findParentByTagName(common, 'caption', true)) {
                     var cell = domUtils.getElementsByTagName(table, 'th td');
