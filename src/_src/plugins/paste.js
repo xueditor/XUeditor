@@ -97,7 +97,7 @@ UE.plugins['paste'] = function () {
             // 处理所有图片，base64的需要上传
             for (var i = 0; i < imgs.length; i++) {
                 var img = imgs[i];
-                if (img && img.src && !img.src.indexOf('data:image/png;base64,')) {
+                if (img && img.src && img.src.match(/data\:image\/(\w+);base64/)) {
                     var file = UE.utils.convertBase64Url(img.src);
                     UE.utils.sendAndInsertFile(file, me);
                 }
