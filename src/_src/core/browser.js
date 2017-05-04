@@ -56,6 +56,8 @@ var browser = UE.browser = function(){
          * }
          * ```
          */
+        firefox : (agent.indexOf('firefox') > -1 ),
+
         mac	: ( agent.indexOf( 'macintosh' ) > -1 ),
 
         /**
