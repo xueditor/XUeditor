@@ -12,7 +12,7 @@ var wordImage = {};
 //(function(){
 var g = baidu.g,
 	flashObj,flashContainer;
-
+var FLASH_BASE_URL = editor.getOpt('FLASH_BASE_URL') || '';
 wordImage.init = function(opt, callbacks) {
 	showLocalPath("localPath");
 	//createCopyButton("clipboard","localPath");
@@ -94,7 +94,7 @@ function createFlashUploader(opt, callbacks) {
 	var option = {
 		createOptions:{
 			id:'flash',
-			url:opt.flashUrl,
+			url:FLASH_BASE_URL + opt.flashUrl,
 			width:opt.width,
 			height:opt.height,
 			errorMessage:lang.flashError,
@@ -132,7 +132,7 @@ function getPasteData(id) {
 function createCopyButton(id, dataFrom) {
 	baidu.swf.create({
 			id:"copyFlash",
-			url:"fClipboard_ueditor.swf",
+			url: FLASH_BASE_URL + "fClipboard_ueditor.swf",
 			width:"58",
 			height:"25",
 			errorMessage:"",

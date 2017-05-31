@@ -32,6 +32,8 @@
         // 服务器统一请求接口路径
         , serverUrl: URL + "action.js?uploadUrl=uploads/"
 
+        // flash 静态文件地址（flash跨域问题）
+        ,FLASH_BASE_URL: 'http://newicafe.baidu.com/resources/common/lib/thirdparty/ueditor1_4_3_1/dialogs/wordimage/'
 
         // 支持1.2.6.1版本服务端配置参数, 开启后serverUrl失效, 所有服务端上传接口配置使用1.2.6.1对应版本
         , useCfg1_2: true
