@@ -16,7 +16,7 @@ UE.plugin.register('autoupload', function (){
     * */
 
     var self = this;
-    const allowImg = ["png", "jpg", "jpeg", "gif", "bmp"];
+    var allowImg = ["png", "jpg", "jpeg", "gif", "bmp"];
 
     function handleFiles(files){
         for (var i = 0; i < files.length; i++) {

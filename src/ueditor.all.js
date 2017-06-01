@@ -37,10 +37,14 @@
     };
 <%
     var paths  = @import "api.js";
+    var package = @import "package.json";
     var root = path.join(base, request.$.title, '../_src/');
     for (var i=0,pi;pi = paths[i++];) {
         var txt = fs.readFileSync(path.join(root, pi)).toString();
         switch (pi) {
+            case 'editor.js':
+                txt = txt.replace(/([\s\t]+version\:)[\d\.\'\"]+/, '$1"' + package.version + '"');
+                break;
             case 'adapter/editor.js':
                 txt = txt.replace('_css', 'css');
                 break;

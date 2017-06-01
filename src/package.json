@@ -1,10 +1,11 @@
 {
   "name": "xueditor",
-  "version": "1.6.5",
+  "version": "1.6.6",
   "description": "clone from ueditor 1.5.0",
   "main": "ueditor.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "f2eserver start"
   },
   "repository": {
     "type": "git",
