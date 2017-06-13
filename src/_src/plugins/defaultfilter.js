@@ -33,6 +33,9 @@ UE.plugins['defaultfilter'] = function () {
                     return;
                 }
                 switch (node.tagName) {
+                    case 'pre':
+                        node.tagName = 'p';
+                        break;
                     case 'style':
                     case 'script':
                         node.setAttr({
