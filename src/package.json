@@ -26,6 +26,8 @@
   },
   "homepage": "https://github.com/xhFE/XUeditor#readme",
   "dependencies": {
+    "mime": "1.*",
+    "f2e-server": "1.*",
     "codemirror": "^5.13.2",
     "jquery": "^1.11.1",
     "syntaxhighlighter": "^4.0.1"

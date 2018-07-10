@@ -40,7 +40,7 @@
         // 1.2.6.1的基本上传配置
         
         // 所有 iframe 通过document.write写出，避免iframe跨域
-        // , iframeLocal: true
+        , iframeLocal: true
 
         , imageUrl: URL + "action.js?uploadUrl=uploads/&action=uploadfile&delay=2000"
         // , uploadfile: URL + "action.js?uploadUrl=uploads/"
